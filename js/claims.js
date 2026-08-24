@@ -8,22 +8,14 @@ function handleClaim(id) {
     return;
   }
 
-  const input = prompt(`How many kg of "${listing.title}" do you want to claim? (max ${listing.qty})`);
-  const amount = Number(input);
+  const confirmClaim = confirm(`Claim all ${listing.qty} kg of "${listing.title}" from ${listing.donor}?`);
+  if (!confirmClaim) return;
 
-  if (!input || isNaN(amount) || amount <= 0) {
-    alert("Please enter a valid quantity.");
-    return;
-  }
-  if (amount > listing.qty) {
-    alert(`Only ${listing.qty} kg available.`);
-    return;
-  }
-
-  listing.qty -= amount;
-  listing.status = listing.qty === 0 ? "matched" : "matching";
-  saveListings(listings);
+  const updatedListings = listings.filter(l => l.id !== id);
+  saveListings(updatedListings);
   renderListings();
+
+  alert(`Claimed! "${listing.title}" has been removed from available inventory.`);
 }
 
 document.addEventListener("click", e => {
