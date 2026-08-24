@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoodBridge — Connecting Surplus Food With Communities That Need It</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-mark"></span>FoodBridge</div>
+    <div class="nav-links">
+      <a href="#" class="active">Dashboard</a>
+      <a href="#">Donations</a>
+      <a href="#">Requests</a>
+      <a href="#">AI Matching</a>
+      <a href="#">Impact</a>
+    </div>
+    <div class="nav-right">
+      <div class="org-chip"><span class="org-avatar">KC</span><span>Kathmandu Community Kitchen</span></div>
+      <button class="nav-toggle" aria-label="Menu"></button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Food Rescue &amp; Redistribution</div>
+      <h1>Connecting Surplus Food With Communities That Need It</h1>
+      <p class="sub">FoodBridge helps organizations redistribute surplus food to communities that need it through intelligent matching.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary">Donate Food</button>
+        <button class="btn btn-outline">Request Food</button>
+      </div>
+      <div class="hero-meta">
+        <div><span class="num">2,480 kg</span><span class="label">Food Rescued</span></div>
+        <div><span class="num">126</span><span class="label">Successful Matches</span></div>
+        <div><span class="num">34</span><span class="label">Active Donations</span></div>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=900&auto=format&fit=crop" alt="Crates of surplus produce ready for redistribution">
+      <div class="hero-media-tag"><span class="dot"></span>Pickup confirmed — Himalayan Bakery</div>
+    </div>
+  </div>
+</header>
+
+<section class="impact-strip">
+  <div class="impact-grid">
+    <div class="impact-item"><div class="num">2,480 kg</div><div class="label">Food Rescued</div></div>
+    <div class="impact-item"><div class="num">126</div><div class="label">Successful Matches</div></div>
+    <div class="impact-item"><div class="num">34</div><div class="label">Active Donations</div></div>
+    <div class="impact-item"><div class="num">18</div><div class="label">Pending Requests</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Available Donations</h2>
+        <p>Surplus food currently listed by donors, ranked by expiry window.</p>
+      </div>
+      <button class="btn btn-outline btn-sm">View All Donations</button>
+    </div>
+
+    <div class="listing-tabs">
+      <span class="listing-tab active">All</span>
+      <span class="listing-tab">Bakery</span>
+      <span class="listing-tab">Prepared Meals</span>
+      <span class="listing-tab">Produce</span>
+    </div>
+
+    <!-- Cards are rendered dynamically by js/listings.js from data/listings.js + localStorage -->
+    <div class="card-grid" id="cardGrid"></div>
+
+    <div class="listing-cta">
+      <button class="btn btn-primary">Add Donation</button>
+    </div>
+  </div>
+</section>
+
+<section class="flow-section">
+  <div class="wrap">
+    <div class="flow-grid">
+      <div class="flow-step">
+        <span class="fnum">01</span>
+        <h3>Donor lists surplus</h3>
+        <p>A business records available food, quantity and expiry window.</p>
+      </div>
+      <div class="flow-step">
+        <span class="fnum">02</span>
+        <h3>Organization requests</h3>
+        <p>A community organization submits what it needs and by when.</p>
+      </div>
+      <div class="flow-step">
+        <span class="fnum">03</span>
+        <h3>AI recommends a match</h3>
+        <p>FoodBridge ranks matches by food type, expiry, distance and priority.</p>
+      </div>
+      <div class="flow-step">
+        <span class="fnum">04</span>
+        <h3>Impact is recorded</h3>
+        <p>Approved matches update rescued food and meals-supported totals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-mark"></span>FoodBridge</div>
+        <p>An AI-assisted platform connecting surplus food from donors with community organizations that need it.</p>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Donations</a></li>
+          <li><a href="#">Requests</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#">AI Matching</a></li>
+          <li><a href="#">Impact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Organization</h4>
+        <ul>
+          <li><a href="#">About FoodBridge</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FoodBridge. All rights reserved.</span>
+      <span>Kathmandu, Nepal</span>
+    </div>
+  </div>
+</footer>
+
+<script src="data/listings.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/urgency.js"></script>
+<script src="js/listings.js"></script>
+<script src="js/claims.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
